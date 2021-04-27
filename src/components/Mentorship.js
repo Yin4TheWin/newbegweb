@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 import stockpic from '../assets/StockMentorship.jpg';
 import '../styles.css'
+
 export class Mentorship extends Component {
     render () {
         return (

@@ -8,6 +8,7 @@ import {Employment} from './components/Employment';
 import {MobileApp} from './components/MobileApp';
 import {SignIn} from './components/SignIn';
 import {Home} from './components/Home';
+import {Register} from './components/Register';
 import { NavigationBar } from './components/NavigationBar';
 import { Helmet } from 'react-helmet';
 import "./styles.css";
@@ -51,6 +52,7 @@ function App(){
          <Route path = "/employment" exact component = {Employment} />
          <Route path = "/mobileapp" exact component = {MobileApp} />
          <Route path = "/signin" exact component = {SignIn} />
+         <Route path = "/register" exact component = {Register} />
          
         </Router>
       </Container>
