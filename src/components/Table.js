@@ -47,7 +47,7 @@ export default function Table({ columns, data }) {
     onChange={handleFilterChange}
     placeholder={"Search by name"}
     />
-    <MaUTable {...getTableProps()}>
+    <MaUTable {...getTableProps()} >
       <TableHead>
         {headerGroups.map(headerGroup => (
           <TableRow {...headerGroup.getHeaderGroupProps()}>
@@ -63,7 +63,7 @@ export default function Table({ columns, data }) {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <StyledTableRow {...row.getRowProps()}>
+          <StyledTableRow {...row.getRowProps()}>
               {row.cells.map(cell => {
                 return (
                   <TableCell {...cell.getCellProps()}>
