@@ -5,10 +5,10 @@ import '../styles.css'
 import './Home.css'
 import * as Realm from "realm-web";
 
-const REALM_APP_ID = "application-0-iarqd"; 
-const app = new Realm.App({ id: REALM_APP_ID });
-const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-const accounts = mongodb.db("NewBeginningsUserInfo").collection("Accounts");
+// const REALM_APP_ID = "application-0-iarqd"; 
+// const app = new Realm.App({ id: REALM_APP_ID });
+// const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+// const accounts = mongodb.db("NewBeginningsUserInfo").collection("Accounts");
 
 
 
@@ -43,34 +43,34 @@ export class Register extends Component {
       var ad = document.getElementById("address");
       (async () => {
         //if form is valid then add details to database
-        const acc = await accounts.findOne({
-          Email:this.state.Email.toLowerCase(),
-        });
-        if(acc!=null){
-          this.setState({emailvalid:false});
-        }
-        else{
-          this.setState({emailvalid:true});
-        }
-        if(em.checkValidity() && pw.checkValidity() && ft.checkValidity() && lt.checkValidity() && 
-        dt.checkValidity() && pn.checkValidity() && ad.checkValidity() && this.state.emailvalid){
-          const result = await accounts.insertOne({
-            Email: this.state.Email.toLowerCase(),
-            Password: this.state.Password,
-            First: this.state.First.toLowerCase(),
-            Last: this.state.Last.toLowerCase(),
-            Date_of_Birth: this.state.Date,
-            Phone: this.state.Phone,
-            Address: this.state.Address.toLowerCase()
-          });
-            //welcomes user
-          this.setState({message:1});
-          console.log("success");
-        }
-        else{
-          this.setState({message:0});
-          console.log("error");
-        }
+        // const acc = await accounts.findOne({
+        //   Email:this.state.Email.toLowerCase(),
+        // });
+        // if(acc!=null){
+        //   this.setState({emailvalid:false});
+        // }
+        // else{
+        //   this.setState({emailvalid:true});
+        // }
+        // if(em.checkValidity() && pw.checkValidity() && ft.checkValidity() && lt.checkValidity() && 
+        // dt.checkValidity() && pn.checkValidity() && ad.checkValidity() && this.state.emailvalid){
+        //   const result = await accounts.insertOne({
+        //     Email: this.state.Email.toLowerCase(),
+        //     Password: this.state.Password,
+        //     First: this.state.First.toLowerCase(),
+        //     Last: this.state.Last.toLowerCase(),
+        //     Date_of_Birth: this.state.Date,
+        //     Phone: this.state.Phone,
+        //     Address: this.state.Address.toLowerCase()
+        //   });
+        //     //welcomes user
+        //   this.setState({message:1});
+        //   console.log("success");
+        // }
+        // else{
+        //   this.setState({message:0});
+        //   console.log("error");
+        // }
       })();
     }
 

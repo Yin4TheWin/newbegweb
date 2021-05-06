@@ -6,10 +6,10 @@ import '../styles.css'
 import '../components/Home.css'
 import * as Realm from "realm-web";
 
-const REALM_APP_ID = "application-0-iarqd"; 
-const app = new Realm.App({ id: REALM_APP_ID });
-const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-const accounts = mongodb.db("NewBeginningsUserInfo").collection("Accounts");
+// const REALM_APP_ID = "application-0-iarqd"; 
+// const app = new Realm.App({ id: REALM_APP_ID });
+// const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+// const accounts = mongodb.db("NewBeginningsUserInfo").collection("Accounts");
 
 
 export class SignIn extends Component {
@@ -41,16 +41,16 @@ export class SignIn extends Component {
         this.setState({message:0});
       }
       else{
-        const acc = await accounts.findOne({
-          Email:this.state.Email.toLowerCase(),
-          Password:this.state.Password
-        });
-        if(acc!=null){
-          this.setState({message:1});
-        }
-        else{
-          this.setState({message:2});
-        }
+        // const acc = await accounts.findOne({
+        //   Email:this.state.Email.toLowerCase(),
+        //   Password:this.state.Password
+        // });
+        // if(acc!=null){
+        //   this.setState({message:1});
+        // }
+        // else{
+        //   this.setState({message:2});
+        // }
       }
     })();
   };
